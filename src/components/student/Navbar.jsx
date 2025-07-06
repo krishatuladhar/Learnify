@@ -2,13 +2,16 @@ import React from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Navbar = () => {
+  const {navigate} = useContext(AppContext)
   const { openSignIn } = useClerk();
   const { user } = useUser();
   return (
     <div className=" bg-green-200 flex items-center justify-between px-1 sm:px-8 md:px-8 lg:px-10 border-b border-gray-500 -mt-4">
-      <img
+      <img onClick={() => navigate('/')}
         src={assets.logo}
         alt="Logo"
         className="w-20 lg:w-25 cursor-pointer"
