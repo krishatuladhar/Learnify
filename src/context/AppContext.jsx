@@ -1,4 +1,4 @@
-import { captureOwnerStack, createContext } from "react";
+import { createContext } from "react";
 import { dummyCourses } from "../assets/assets";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ export const AppContextProvider = (props) => {
   
     const navigate = useNavigate();
   const [allCourses, setAllCourses] = useState([]);
+  const [isEducator,setIsEducator] = useState(false)
 
   const fetchAllCourses = async () => {
     setAllCourses(dummyCourses);
@@ -34,7 +35,9 @@ export const AppContextProvider = (props) => {
     currency,
     allCourses,
     navigate,
-    calculateRating
+    calculateRating,
+    isEducator,
+    setIsEducator
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>

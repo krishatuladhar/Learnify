@@ -4,6 +4,17 @@ import user_icon from './user_icon.png';
 import microsoft_logo from './microsoft_logo.png';
 import adobe_logo from './acrobat_logo.png';
 import paypal_logo from './paypal_logo.png';
+import star_blank  from './star_dull_icon.svg';
+import star from './rating_star.svg';
+import arrow_icon from './arrow_icon.svg';
+
+import course_1_thumbnail from './course_1.png'
+import course_2_thumbnail from './course_2.png'
+import course_3_thumbnail from './course_3.png'
+import course_4_thumbnail from './course_4.png'
+import profile_img_1 from './profile_img_1.png'
+import profile_img_2 from './profile_img_2.png'
+import profile_img_3 from './profile_img_3.png'
 
 export const assets = {
   logo,
@@ -12,7 +23,128 @@ export const assets = {
   microsoft_logo,
   adobe_logo,
   paypal_logo,
+  star,
+  star_blank,
+  course_1_thumbnail,
+  course_2_thumbnail,
+  course_3_thumbnail,
+  course_4_thumbnail,
+  profile_img_1,
+  profile_img_2,
+  profile_img_3,
+  arrow_icon
+
 };
+
+export const dummyTestimonial = [
+    {
+        name: 'Donald Jackman',
+        role: 'SWE 1 @ Amazon',
+        image: assets.profile_img_1,
+        rating: 5,
+        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+    },
+    {
+        name: 'Richard Nelson',
+        role: 'SWE 2 @ Samsung',
+        image: assets.profile_img_2,
+        rating: 4,
+        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+    },
+    {
+        name: 'James Washington',
+        role: 'SWE 2 @ Google',
+        image: assets.profile_img_3,
+        rating: 4.5,
+        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+    },
+];
+
+export const dummyDashboardData = {
+    "totalEarnings": 707.38,
+    "enrolledStudentsData": [
+        {
+            "courseTitle": "Introduction to JavaScript",
+            "student": {
+                "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+                "name": "Great Stack",
+                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            }
+        },
+        {
+            "courseTitle": "Advanced Python Programming",
+            "student": {
+                "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+                "name": "Great Stack",
+                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            }
+        },
+        {
+            "courseTitle": "Web Development Bootcamp",
+            "student": {
+                "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+                "name": "Great Stack",
+                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            }
+        },
+        {
+            "courseTitle": "Data Science with Python",
+            "student": {
+                "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+                "name": "Great Stack",
+                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            }
+        },
+        {
+            "courseTitle": "Cybersecurity Basics",
+            "student": {
+                "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+                "name": "Great Stack",
+                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            }
+        }
+    ],
+    "totalCourses": 8
+}
+
+export const dummyStudentEnrolled = [
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "GreatStack",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+        },
+        "courseTitle": "Introduction to JavaScript",
+        "purchaseDate": "2024-12-20T08:39:55.509Z"
+    },
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "GreatStack",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+        },
+        "courseTitle": "Introduction to JavaScript",
+        "purchaseDate": "2024-12-20T08:59:49.964Z"
+    },
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "GreatStack",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+        },
+        "courseTitle": "Advanced Python Programming",
+        "purchaseDate": "2024-12-20T11:03:42.931Z"
+    },
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "GreatStack",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+        },
+        "courseTitle": "Web Development Bootcamp",
+        "purchaseDate": "2024-12-20T11:04:48.798Z"
+    }
+]
 
 export const dummyCourses = [
     {
