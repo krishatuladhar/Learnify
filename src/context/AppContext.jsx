@@ -9,9 +9,11 @@ export const AppContext = createContext();
 export const AppContextProvider = (props) => {
   const currency = import.meta.env.VITE_CURRENCY;
   
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
   const [allCourses, setAllCourses] = useState([]);
   const [isEducator,setIsEducator] = useState(false)
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
 
   const fetchAllCourses = async () => {
     setAllCourses(dummyCourses);
@@ -57,9 +59,13 @@ export const AppContextProvider = (props) => {
 
     return totalLectures;
   };
- 
+  const fetchUserEnrolledCourses = async () => {
+    setEnrolledCourses(dummyCourses);
+  };
+
   useEffect(() => {
-    fetchAllCourses();
+    fetchAllCourses()
+    fetchUserEnrolledCourses()
   }, []);
 
   const value = {
@@ -71,7 +77,9 @@ export const AppContextProvider = (props) => {
     setIsEducator,
     calculateChapterTime,
     calculateCourseDuration,    
-    calculateNoOfLectures
+    calculateNoOfLectures,
+    enrolledCourses,
+    fetchUserEnrolledCourses,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
