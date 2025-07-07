@@ -15,6 +15,10 @@ import course_4_thumbnail from './course_4.png'
 import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
 import profile_img_3 from './profile_img_3.png'
+import down_arrow_icon from './down_arrow_icon.svg'
+import time_left_clock_icon from './time_left_clock_icon.svg'
+import time_clock_icon from './time_clock_icon.svg'
+import play_icon from './play_icon.svg';
 
 export const assets = {
   logo,
@@ -32,8 +36,11 @@ export const assets = {
   profile_img_1,
   profile_img_2,
   profile_img_3,
-  arrow_icon
-
+  arrow_icon,
+  down_arrow_icon,
+  time_left_clock_icon,
+  time_clock_icon,
+  play_icon
 };
 
 export const dummyTestimonial = [
