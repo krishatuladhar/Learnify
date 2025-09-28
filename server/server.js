@@ -7,6 +7,7 @@ import educatorRouter from "./routes/educatorRoutes.js";
 import { clerkMiddleware } from "@clerk/express";
 import connectCloudinary from "./config/cloudinary.js";
 import { getEducatorCourses } from "./controllers/educatorController.js";
+import courseRouter from "./routes/courseRoutes.js";
 
 dotenv.config();
 // Create Express app
@@ -17,15 +18,15 @@ await connectDB();
 await connectCloudinary();
 
 // Middleware
-app.use(express.json()); 
+app.use(express.json());
 app.use(cors());
 app.use(clerkMiddleware());
 
 // Routes
 app.get("/", (req, res) => res.send("Welcome to Learnify API"));
-app.post('/clerk', clerkWebhooks);
-app.use('/api/educator', educatorRouter);
-
+app.post("/clerk", clerkWebhooks);
+app.use("/api/educator", educatorRouter);
+app.use("/api/course", courseRouter);
 
 // Start server
 const PORT = process.env.PORT || 5000;
