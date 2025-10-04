@@ -7,7 +7,7 @@ import User from "../models/User.js";
 // Update Role to Educator
 export const updateRoleToEducator = async (req, res) => {
   try {
-    const userId = req.auth();
+    const userId = req.auth.userId;
 
     await clerkClient.users.updateUserMetadata(userId, {
       publicMetadata: {
@@ -26,7 +26,7 @@ export const addCourse = async (req, res) => {
   try {
     const { courseData } = req.body;
     const imageFile = req.file;
-     const { userId: educatorId } = req.auth();
+    const { userId: educatorId } = req.auth;
 
     if (!imageFile) {
       return res.json({ success: false, message: "Thumbnail Not Attached" });
@@ -49,7 +49,7 @@ export const addCourse = async (req, res) => {
 // List of Courses by Educator
 export const getEducatorCourses = async (req, res) => {
   try {
-    const { userId: educator } = req.auth(); 
+    const { userId: educator } = req.auth;
     const courses = await Course.find({ educator });
     res.json({ success: true, courses });
   } catch (error) {
@@ -60,7 +60,7 @@ export const getEducatorCourses = async (req, res) => {
 // Get Educator Dashboard Data (Total Earnings, Enrolled Students, Total Courses)
 export const educatorDashboardData = async (req, res) => {
   try {
-    const { userId: educator } = req.auth();
+    const { userId: educator } = req.auth;
     const courses = await Course.find({ educator });
     const totalCourses = courses.length;
 
@@ -103,14 +103,17 @@ export const educatorDashboardData = async (req, res) => {
       },
     });
   } catch (error) {
-    resjson({ success: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
 
 // Get Enrolled Students Data with Purchase Data
 export const getEnrolledStudentsData = async (req, res) => {
   try {
-      const { userId: educator } = req.auth();
+    const { userId: educator } = req.auth;
+    if (!educator) {
+      return res.json({ success: false, message: "User not authenticated" });
+    }
 
     // Fetch all courses created by the educator
     const courses = await Course.find({ educator });
